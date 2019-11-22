@@ -115,6 +115,11 @@ function getStarshipPassengerAndCrewSumTotal(character) {
 */
 function getNthFilm(character, filmNumber) {
   // TODO: Add your code here.
+  if (filmNumber > 3 || filmNumber < 1) {return  `There are only 3 Star Wars movies. Flan fiction excluded.`} else {
+    let nth = filmNumber - 1;
+    return character.films[nth];
+  }
+
 }
 
 /**
@@ -129,6 +134,9 @@ function getNthFilm(character, filmNumber) {
 */
 function getCargoCapacityTotal(character) {
   // TODO: Add your code here.
+  const shipcargo = character.vehicles.reduce((total, ships) => {
+    return ships.cargo_capacity += total;
+  }, 0)
   
 }
 
